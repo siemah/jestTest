@@ -14,6 +14,21 @@ test('to be falsy value', () => {
 
 test('to be falsy value', () => {
     expect(functions.checkValue(null)).toBeNull();
+});
+
+// all toBe methods are used to compare with native types like number, bool, undefined, null ...
+// and to test if a custom type like object should use toEqual
+class Cls {
+    constructor(prop) {
+        this.prop = prop;
+    }
+}
+describe("deffirence between toEquak and toStrictEqual", () => {
+    test('are not semanticly equal', () => {
+        expect(new Cls('s')).toEqual({prop: 's'});
+        expect( new Cls('s')).not.toStrictEqual({prop: 's'});
+    })
+    
 })
 
 
