@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "test": "jest ./src/async.test.js"
+    "test": "jest ./src/setup-and-teardown.test.js"
   },
   "devDependencies": {
     "@types/jest": "^24.0.18",
