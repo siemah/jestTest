@@ -11,20 +11,50 @@ const initializeBD = () => new Promise((res, rej) => {
     'react-native',
   ]);
 });
-
-beforeEach( async () => {
-  return _db = await initializeBD();
+const initJobs =  () => new Promise((res, rej) => {
+  res([
+    'fronend',
+    'backend',
+    'fullstack',
+    'web developer',
+    'softeare engineer',
+    'mobile develoer',
+  ]);
 });
 
-afterEach(() => {
-  _db = [];
+/**
+ * SCOPE
+ * the initializeDB function run for every test 
+ * because its in global scope of all tests
+ */
+
+beforeEach(() => {
+  console.log('global before')
+  return initializeBD().then(res => {
+    _db = res;
+  });
 });
 
-test('should php be one of my programming languafe i use as backend lang', () => {
+test('should master "php"', () => {
   expect(_db).toContain('php');
 });
 
-test('should i know react-native', () => {
-  expect(_db).toContain('react-native');
-});
+describe('mathing jobs to langs', () => {
+
+  let _jobs = [];
+  beforeEach( () =>{
+    console.log('describe before')
+    return initJobs().then(j => _jobs = j);
+  });
+
+  afterEach(() => {
+    _jobs = null;
+  });
+
+
+  test('should be backend to master "php"', () => {
+    expect(_jobs).toContain('backend')
+  });
+
+})
 
