@@ -23,34 +23,16 @@ const initJobs =  () => new Promise((res, rej) => {
 });
 
 /**
- * Order of execution of describe and other tests
- * inside the describe block the order matter because
- * it respect the order 
+ * TIPS:
+ * 1/- to verify if the test passed beside others
+ *    just use only commade like line 31 test.only
+ *    to skip all other tests just & run that test with only flag
  */
-describe('global describe', () => {
-  
-describe('descire Q', () => {
-  console.log('inner describe Q')
-  test('should inner describe Q', () => {
-    console.log('innet test 1 of describe Q');
-    expect(1).toBeTruthy();
-  });
-});
-console.log('between describe Q and test W')
-test('should inner test W', () => {
-  console.log('inner test W without descibe');
-  expect(1).toBeTruthy();
-});
-console.log('between describe C and test W')
-describe('describe inner C', () => {
-  console.log('describe inner C');
-  test('test for describe inner C', () => {
-    console.log('test for describe inner C');
-    expect(false).toEqual(false);
-  });
+
+test.only('should truthy', () => {
+  expect(null).toBeTruthy();
 });
 
-console.log('describe outer-c');
-
-
-})
+test('should falsy', () => {
+  expect(null).toBeFalsy();
+});
