@@ -27,7 +27,7 @@ const initJobs =  () => new Promise((res, rej) => {
  * inside the describe block the order matter because
  * it respect the order 
  */
-// describe('global describe', () => {
+describe('global describe', () => {
   
 describe('descire Q', () => {
   console.log('inner describe Q')
@@ -53,4 +53,4 @@ describe('describe inner C', () => {
 console.log('describe outer-c');
 
 
-// })
+})
