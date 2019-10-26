@@ -1,11 +1,15 @@
-let mockfn = jest.fn()
-  .mockImplementationOnce(cb => cb(null, true))
-  .mockImplementationOnce(cb => cb(null, false))
+let mockfn = jest
+  .fn(cb => 'default behavior of implementation')
+  .mockImplementationOnce(cb => '1st call')
+  .mockImplementationOnce(cb => '2nd call')
 
 test('should mock ', () => {
 
-  mockfn((err, val) => console.log(val));
-  // > true
+  console.log(
+    mockfn(),
+    mockfn(),
+    mockfn(),
+    mockfn(),
+  )
 
-  mockfn((err, val) => console.log(val));
 })
