@@ -1,12 +1,7 @@
-const fetch = require('node-fetch');
-const Users = require('./modules/Users');
+jest.mock('./modules/foo');
+const foo = require('./modules/foo');
 
-jest.mock('node-fetch');
-
-test('should fetch users', () => {
-  const users = [{name: 'Bob'}];
-  fetch.mockResolvedValue(users);
-  return Users.all().then(data => {
-    expect(data).toEqual(users)
-  });
-});
+test('should mock function implementation', () => {
+  foo.mockImplementation(n => n);
+  console.log(foo())
+})
