@@ -7,6 +7,6 @@ test('should fetch users', () => {
   const users = [{name: 'Bob'}];
   fetch.mockResolvedValue(users);
   return Users.all().then(data => {
-    console.log(data)
+    expect(data).toEqual(users)
   });
 });
