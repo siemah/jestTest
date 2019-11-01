@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshots should use matcher prop to expect the object props 1`] = `
+Object {
+  "createdAt": Any<Date>,
+  "id": Any<Number>,
+  "name": Any<String>,
+}
+`;
+
+exports[`Snapshots will fail every time 1`] = `
+Object {
+  "createdAt": 2019-11-01T16:09:01.677Z,
+  "id": 4,
+  "name": "LeBron James junior",
+}
+`;
