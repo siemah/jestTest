@@ -31,3 +31,12 @@ it('work with async/await and resolves together 2', async () => {
   expect.assertions(1);
   expect(await user.getUserName(5)).toEqual('Paul')
 });
+
+it('catch error with promise', () => {
+  expect.assertions(1);
+  return user.getUserName(2)
+    .catch(error => expect(error).toEqual({
+      error: 'User with 2 not found.'
+    }))
+});
+
