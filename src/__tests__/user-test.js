@@ -40,3 +40,13 @@ it('catch error with promise', () => {
     }))
 });
 
+it('catch error with async/await', async () => {
+  expect.assertions(1);
+  try {
+    await user.getUserName(3)
+  } catch (error) {
+    expect(error).toEqual({
+      error: 'User with 3 not found.'
+    });
+  }
+});
