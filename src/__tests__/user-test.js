@@ -58,3 +58,9 @@ it('catch error using rejects', () => {
   })
 });
 
+it('catch error using rejects with async/await', async () => {
+  expect.assertions(1);
+  await expect(user.getUserName(34)).rejects.toEqual({
+    error: 'User with 34 not found.'
+  })
+});
