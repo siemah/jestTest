@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "test": "jest ./src/__tests__/ --watch"
+    "test": "jest ./src/__tests__/timer.js --watch"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
